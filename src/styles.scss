@@ -1,6 +1,7 @@
 // Add application styles & imports to this file!
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
 
 * {
   margin: 0;
@@ -10,7 +11,8 @@
 }
 
 :root {
-  --primary-color: #1e1d1b;
+  --primary-font: 'Oswald', sans-serif;
+  --primary-color: #A3C400;
   --secondary-color: #f5f5f5;
   --text-color: #333;
 }
@@ -41,4 +43,8 @@ app-root {
 .main-content {
   flex: 1 0 auto;
   padding: 20px 0;
+}
+
+.primary-text{
+  color: var(--primary-color);
 }
