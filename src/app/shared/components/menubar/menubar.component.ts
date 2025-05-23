@@ -1,35 +1,36 @@
-import { Ripple } from 'primeng/ripple';
-import { InputTextModule } from 'primeng/inputtext';
-import { AvatarModule } from 'primeng/avatar';
-import { BadgeModule } from 'primeng/badge';
-import { Menubar } from 'primeng/menubar';
+import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Menubar } from 'primeng/menubar';
 
 @Component({
   selector: 'app-menubar',
-  imports: [
-    Menubar,
-    BadgeModule,
-    AvatarModule,
-    InputTextModule,
-    Ripple,
-    CommonModule,
-  ],
   templateUrl: './menubar.component.html',
-  styles: ``,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [Menubar]
 })
-export class MenubarComponent implements OnInit{
+export class MenubarComponent implements OnInit {
   items: MenuItem[] | undefined;
 
   ngOnInit() {
-      this.items = [
-          {
-              label: 'Home',
-              icon: 'pi pi-home',
-          }
-      ];
+    this.items = [
+      {
+        label: 'Inicio',
+        icon: 'pi pi-home'
+      },
+      {
+        label: 'Destacados',
+        icon: 'pi pi-star'
+      },
+      {
+        label: 'Proyectos',
+        icon: 'pi pi-search',
+      },
+      {
+        label: 'Contacto',
+        icon: 'pi pi-envelope',
+        url: 'https://www.instagram.com/tendencias_graficas',
+        target: '_blank'
+      }
+    ];
   }
 }
