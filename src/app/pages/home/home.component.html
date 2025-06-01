@@ -38,17 +38,11 @@
     [responsiveOptions]="responsiveOptions"
     [autoplayInterval]="3000"
   >
-    <ng-template let-product pTemplate="item">
+    <ng-template let-imageSrc  pTemplate="item">
       <div class="border rounded m-2 p-4 flex flex-column align-items-center">
-        <img
-          [src]="'assets/' + product.image"
-          style="
-            width: 500px;
-            height: 600px;
-            object-fit: cover;
-            border-radius: 20px;
-          "
-        />
+        <img [src]="imageSrc"
+         alt="Imagen"
+         style="width: 500px; height: 400px; object-fit: contain; border-radius: 20px;"/>
       </div>
     </ng-template>
   </p-carousel>
