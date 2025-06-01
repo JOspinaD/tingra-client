@@ -1,4 +1,4 @@
-import { Component, model, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { CarouselModule } from 'primeng/carousel';
@@ -7,23 +7,18 @@ import { GalleriaModule } from 'primeng/galleria';
 
 @Component({
   selector: 'app-home',
+  templateUrl: './home.component.html',
   imports: [
     CardModule,
     ButtonModule,
     CarouselModule,
-    CarouselModule,
     TagModule,
     GalleriaModule,
   ],
-  templateUrl: './home.component.html',
-  styles: `
-  .p-card .p-card-body {
-      width: 100%;
-      height: 100%;
-    }`,
 })
-export class HomeComponent implements OnInit {
-  images: any[] = [];
+
+export class HomeComponent  {
+ images: any[] = [];
 
   responsiveOptions: any[] = [
     {
@@ -43,6 +38,8 @@ export class HomeComponent implements OnInit {
     },
   ];
   constructor() {}
+
+
   ngOnInit(): void {
     this.images = [
       'assets/marcas.png',
@@ -51,4 +48,5 @@ export class HomeComponent implements OnInit {
       'assets/tintas.png'
     ];
   }
+
 }

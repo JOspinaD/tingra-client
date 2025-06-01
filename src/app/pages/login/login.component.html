@@ -1,0 +1,26 @@
+<div class="flex justify-content-center align-items-center h-screen">
+  <p-card [style]="{ width: '23rem', overflow: 'hidden' }">
+    <div class="flex justify-content-center align-items-center">
+      <img src="assets/img/Logo.png" alt="Logo" class="w-7 h-7" />
+    </div>
+    <form [formGroup]="loginForm">
+      <div class="grid w-full">
+        <div class="col-12 flex justify-content-center w-full">
+          <p-float-label variant="in">
+            <input type="email" formControlName="correo" pInputText pSize="large" />
+            <label for="Correo">Correo</label>
+          </p-float-label>
+        </div>
+        <div class="col-12 flex justify-content-center w-full">
+          <p-float-label variant="in">
+            <input type="password" pInputText formControlName="contraseña" pSize="large" />
+            <label for="contraseña">contraseña</label>
+          </p-float-label>
+        </div>
+      </div>
+    </form>
+    <div class="flex justify-content-center align-items-center">
+      <p-button label="Iniciar Sesión" (click)="onSubmit()"  />
+    </div>
+  </p-card>
+</div>

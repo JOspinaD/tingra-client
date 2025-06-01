@@ -5,10 +5,11 @@
     <p-card>
       <h2 class="primary-text">Quienes somos</h2>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam
-        voluptatem sequi itaque eum perspiciatis assumenda obcaecati, cumque
-        impedit recusandae? Nemo, officia voluptate tempore adipisci repellendus
-        maiores voluptatum sequi accusamus architecto?
+        En Tingra, nos dedicamos a impulsar la evolución de la Comunicación
+        Visual, investigando las dinámicas más relevantes del sector. Nuestro
+        objetivo es identificar y analizar las transformaciones tecnológicas,
+        metodológicas y creativas que están redefiniendo el campo del diseño
+        gráfico.
       </p>
     </p-card>
   </div>
@@ -28,10 +29,21 @@
   <h2 class="primary-text">Un poco sobre Tingra</h2>
 </div>
 
-<p-carousel [value]="images" [numVisible]="2" class="p-p-4">
-  <ng-template let-imageSrc pTemplate="item">
-    <img [src]="imageSrc"
+<div class="card mt-3">
+  <p-carousel
+    [value]="images"
+    [numVisible]="2"
+    [numScroll]="3"
+    [circular]="true"
+    [responsiveOptions]="responsiveOptions"
+    [autoplayInterval]="3000"
+  >
+    <ng-template let-imageSrc  pTemplate="item">
+      <div class="border rounded m-2 p-4 flex flex-column align-items-center">
+        <img [src]="imageSrc"
          alt="Imagen"
          style="width: 500px; height: 400px; object-fit: contain; border-radius: 20px;"/>
-  </ng-template>
-</p-carousel>
+      </div>
+    </ng-template>
+  </p-carousel>
+</div>
