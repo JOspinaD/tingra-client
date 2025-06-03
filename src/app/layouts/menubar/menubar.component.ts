@@ -31,6 +31,13 @@ export class MenubarComponent implements OnInit {
           this.redirectToUsers();
         },
       },
+      {
+        label: 'Empresas',
+        icon: 'pi pi-building',
+        command: () => {
+          this.redirectToEmpresas();
+        },
+      },
     ];
   }
 
@@ -44,5 +51,9 @@ export class MenubarComponent implements OnInit {
 
   redirectToUsers() {
     this.router.navigate(['/usuarios']);
+  }
+
+  redirectToEmpresas() {
+    this.router.navigate(['/empresas']);
   }
 }
