@@ -20,6 +20,9 @@ import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { InputTextModule } from 'primeng/inputtext';
+import { Toast } from 'primeng/toast';
+import { Ripple } from 'primeng/ripple';
+import { CardModule } from 'primeng/card';
 @Component({
   selector: 'app-usuarios',
   imports: [
@@ -30,6 +33,8 @@ import { InputTextModule } from 'primeng/inputtext';
     DialogModule,
     FloatLabelModule,
     InputTextModule,
+    Toast,
+    CardModule
   ],
   providers: [MessageService],
   templateUrl: './usuarios.component.html',
@@ -92,7 +97,7 @@ export class UsuariosComponent implements OnInit {
       this.UsuarioService.update(this.selectedUsuarioId, usuario).subscribe({
         next: () => {
           this.messageService.add({
-            severity: 'success',
+            severity: 'info',
             summary: 'Éxito',
             detail: 'Usuario actualizado correctamente',
           });
@@ -148,7 +153,7 @@ export class UsuariosComponent implements OnInit {
     this.UsuarioService.delete(usuarioId).subscribe({
       next: () => {
         this.messageService.add({
-          severity: 'success',
+          severity: 'warn',
           summary: 'Éxito',
           detail: 'Usuario eliminado correctamente',
         });
