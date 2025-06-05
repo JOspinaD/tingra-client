@@ -1,73 +1,158 @@
 <p-toast></p-toast>
-<div>
-  <h1>{{ empresaForm.get("nombre")?.value }}</h1>
-</div>
-<div>
-  <p-card>
-    <form [formGroup]="empresaForm" (ngSubmit)="guardarInformacion()">
-      <div class="grid">
-        <div class="col-12">
-          <label>Propietario</label>
-          <input type="text" pInputText formControlName="propietario" />
+<div class="flex justify-content-center">
+  <div class="m-5 w-10">
+    <p-card>
+      <div class="flex justify-content-center m-2">
+        <h1>{{ empresaForm.get("nombre")?.value }}</h1>
+      </div>
+      <form [formGroup]="empresaForm" (ngSubmit)="guardarInformacion()">
+        <div class="formgrid grid">
+          <div class="field col">
+            <label>Propietario</label>
+            <input
+              type="text"
+              pInputText
+              formControlName="propietario"
+              class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+            />
+          </div>
+
+          <div class="field col">
+            <label
+              >Fecha de Creacion de la Empresa
+              <b>{{ empresaForm.get("nombre")?.value }}</b></label
+            >
+            <br />
+            <div class="w-full">
+              <p-date-picker
+                type="text"
+                [showIcon]="true"
+                formControlName="fechaCreacion"
+              ></p-date-picker>
+            </div>
+          </div>
         </div>
+        <div class="formgrid grid">
+          <div class="field col">
+            <label>Servicios</label>
+            <input
+              type="text"
+              pInputText
+              formControlName="servicios"
+              class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+            />
+          </div>
+          <div class="field col">
+            <label>Redes Sociales</label>
+            <input
+              type="text"
+              pInputText
+              formControlName="redesSociales"
+              class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+            />
+          </div>
+        </div>
+        <div class="formgrid grid">
+          <div class="field col flex gap-2">
+            <label>Pertenece a la Red de Emprendedores</label>
+            <p-checkbox
+              inputId="size_normal"
+              formControlName="perteneceRedEmprendedores"
+              name="size"
+              value="Normal"
+              [binary]="true"
+            />
+          </div>
+          <div class="field col flex gap-2">
+            <label>Red de Emprendedores Confirmada</label>
+            <p-checkbox
+              inputId="size_normal"
+              formControlName="redEmprendedoresConfirmada"
+              name="size"
+              value="Normal"
+              [binary]="true"
+            />
+          </div>
+        </div>
+        <div>
+          <label>Aspectos A mejorar</label>
+          <textarea
+            pInputTextarea
+            formControlName="aspectosMejorar"
+            rows="5"
+            cols="30"
+            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+          ></textarea>
+        </div>
+        <div>
+          <label>Observaciones</label>
+          <textarea
+            pInputTextarea
+            formControlName="observaciones"
+            rows="5"
+            cols="30"
+            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+          ></textarea>
+        </div>
+        <div class="formgrid grid">
+          <div class="field col">
+            <label>Capacitadores</label>
+            <input
+              type="text"
+              pInputText
+              formControlName="capacitadores"
+              class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+            />
+          </div>
+          <div class="field col">
+            <label>Fecha de Llamada</label>
+            <p-date-picker
+              type="text"
+              [showIcon]="true"
+              formControlName="fechaLlamada"
+            ></p-date-picker>
+          </div>
+        </div>
+        <div class="formgrid grid">
+          <div class="field col">
+            <label>Disponibilidad</label>
+            <input
+              type="text"
+              pInputText
+              formControlName="disponibilidad"
+              class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+            />
+          </div>
+          <div class="field col">
+            <label>Disponibilidad para Capacitación</label>
+            <input
+              type="text"
+              pInputText
+              formControlName="disponibilidad"
+              class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+            />
+          </div>
+        </div>
+        <div class="formgrid grid">
+          <div class="flex gap-2">
+            <label>Capacitacion recibida</label>
+            <p-checkbox
+              inputId="size_normal"
+              formControlName="capacitacionRecibida"
+              name="size"
+              value="Normal"
+              [binary]="true"
+            />
+          </div>
+        </div>
+      </form>
+      <div class="mt-2 flex justify-content-center">
+        <p-button
+          label="Guardar"
+          (click)="guardarInformacion()"
+          [loading]="loading"
+        ></p-button>
       </div>
-      <div class="field">
-        <label
-          >fecha de Creacion de la Empresa
-          <b>{{ empresaForm.get("nombre")?.value }}</b></label
-        >
-        <p-calendar
-          type="text"
-          [showIcon]="true"
-          formControlName="fechaCreacion"
-        ></p-calendar>
-      </div>
-      <div>
-        <label>Servicios</label>
-        <input type="text" pInputText formControlName="servicios" />
-      </div>
-      <div>
-        <label>Redes Sociales</label>
-        <input type="text" pInputText formControlName="redesSociales" />
-      </div>
-      <div>
-        <label>Aspectos A mejorar</label>
-        <input type="text" pInputText formControlName="aspectosMejorar" />
-      </div>
-      <div>
-        <label>Capacitadores</label>
-        <input type="text" pInputText formControlName="capacitadores" />
-      </div>
-      <div>
-        <label>fecha de Llamada</label>
-        <p-calendar
-          type="text"
-          [showIcon]="true"
-          formControlName="fechaLlamada"
-        ></p-calendar>
-      </div>
-      <div>
-        <label>Observaciones</label>
-        <textarea
-          pInputTextarea
-          formControlName="observaciones"
-          rows="5"
-          cols="30"
-          class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-        ></textarea>
-      </div>
-      <div>
-        <label>Disponibilidad</label>
-        <input type="text" pInputText formControlName="disponibilidad" />
-      </div>
-      <div>
-        <label>Disponibilidad para Capacitación</label>
-        <input type="text" pInputText formControlName="disponibilidad" />
-      </div>
-      <div>
-        <label>Capacitacion recibida</label>
-         <p-checkbox inputId="size_normal" name="size" value="Normal" />
-      </div>
-    </form>
-  </p-card>
+    </p-card>
+  </div>
 </div>
