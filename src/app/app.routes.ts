@@ -3,27 +3,31 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { EmpresasComponent } from './pages/empresas/empresas.component';
+import { InformacionComponent } from './pages/empresas/components/informacion/informacion.component';
 
 export const routes: Routes = [
   {
     path: '',
     redirectTo: 'home',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
   },
   {
     path: 'usuarios',
-    component: UsuariosComponent
+    component: UsuariosComponent,
   },
   {
     path: 'empresas',
-    component: EmpresasComponent
-  }
+    component: EmpresasComponent,
+  },
+  { path: 'informacion-empresa/:id',
+    component: InformacionComponent
+  },
 ];
