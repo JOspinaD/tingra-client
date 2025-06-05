@@ -6,11 +6,11 @@ import { EmpresaService } from '@app/core/services/empresa.service';
 import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
-import { CalendarModule } from 'primeng/calendar';
 import { Toast } from 'primeng/toast';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { InputTextModule } from 'primeng/inputtext';
 import { CheckboxModule } from 'primeng/checkbox';
+import { DatePickerModule } from 'primeng/datepicker';
 
 @Component({
   selector: 'app-informacion',
@@ -19,14 +19,25 @@ import { CheckboxModule } from 'primeng/checkbox';
     ReactiveFormsModule,
     CommonModule,
     ButtonModule,
-    CalendarModule,
     Toast,
     ProgressSpinnerModule,
     InputTextModule,
-    CheckboxModule
+    CheckboxModule,
+    DatePickerModule
   ],
   templateUrl: './informacion.component.html',
   providers: [MessageService],
+  styles: [
+    `
+      ::ng-deep .p-datepicker {
+        width: 100% !important;
+      }
+      ::ng-deep .p-datepicker .p-inputtext {
+        width: 100% !important;
+      }
+    `,
+  ],
+
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class InformacionComponent implements OnInit {
