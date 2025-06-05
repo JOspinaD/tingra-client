@@ -30,6 +30,11 @@
                 icon="pi pi-trash"
                 (click)="eliminarEmpresa(empresa)"
               ></p-button>
+              <button
+                pButton
+                (click)="verDetalleEmpresa(empresa.id)"
+                label="Ver Detalle"
+              ></button>
             </td>
           </tr>
         </ng-template>
@@ -40,11 +45,12 @@
 
 <div class="flex justify-content-center">
   <p-dialog
-  [header]="editing ? 'Editar Empresa' : 'Nueva Empresa'"
-  [modal]="true"
-  [(visible)]="visible"
-  [style]="{ width: '50vw' }"
-  [closable]="true">
+    [header]="editing ? 'Editar Empresa' : 'Nueva Empresa'"
+    [modal]="true"
+    [(visible)]="visible"
+    [style]="{ width: '50vw' }"
+    [closable]="true"
+  >
     <form [formGroup]="empresaForm">
       <div class="grid">
         <div class="col-12">
@@ -85,12 +91,10 @@
         />
       </div>
     </form>
-     <p-button
+    <p-button
       [label]="editing ? 'Editar' : 'Crear Empresa'"
       (click)="crearEmpresa()"
       [disabled]="!empresaForm.valid"
     ></p-button>
   </p-dialog>
 </div>
-
-

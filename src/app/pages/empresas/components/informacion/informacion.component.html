@@ -1,0 +1,73 @@
+<p-toast></p-toast>
+<div>
+  <h1>{{ empresaForm.get("nombre")?.value }}</h1>
+</div>
+<div>
+  <p-card>
+    <form [formGroup]="empresaForm" (ngSubmit)="guardarInformacion()">
+      <div class="grid">
+        <div class="col-12">
+          <label>Propietario</label>
+          <input type="text" pInputText formControlName="propietario" />
+        </div>
+      </div>
+      <div class="field">
+        <label
+          >fecha de Creacion de la Empresa
+          <b>{{ empresaForm.get("nombre")?.value }}</b></label
+        >
+        <p-calendar
+          type="text"
+          [showIcon]="true"
+          formControlName="fechaCreacion"
+        ></p-calendar>
+      </div>
+      <div>
+        <label>Servicios</label>
+        <input type="text" pInputText formControlName="servicios" />
+      </div>
+      <div>
+        <label>Redes Sociales</label>
+        <input type="text" pInputText formControlName="redesSociales" />
+      </div>
+      <div>
+        <label>Aspectos A mejorar</label>
+        <input type="text" pInputText formControlName="aspectosMejorar" />
+      </div>
+      <div>
+        <label>Capacitadores</label>
+        <input type="text" pInputText formControlName="capacitadores" />
+      </div>
+      <div>
+        <label>fecha de Llamada</label>
+        <p-calendar
+          type="text"
+          [showIcon]="true"
+          formControlName="fechaLlamada"
+        ></p-calendar>
+      </div>
+      <div>
+        <label>Observaciones</label>
+        <textarea
+          pInputTextarea
+          formControlName="observaciones"
+          rows="5"
+          cols="30"
+          class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+        ></textarea>
+      </div>
+      <div>
+        <label>Disponibilidad</label>
+        <input type="text" pInputText formControlName="disponibilidad" />
+      </div>
+      <div>
+        <label>Disponibilidad para Capacitación</label>
+        <input type="text" pInputText formControlName="disponibilidad" />
+      </div>
+      <div>
+        <label>Capacitacion recibida</label>
+         <p-checkbox inputId="size_normal" name="size" value="Normal" />
+      </div>
+    </form>
+  </p-card>
+</div>

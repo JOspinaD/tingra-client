@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { EmpresaService } from '@app/core/services/empresa.service';
 import { Empresa } from '@app/shared/interfaces/empresa';
 import { MessageService } from 'primeng/api';
@@ -43,34 +44,27 @@ export class EmpresasComponent implements OnInit {
   constructor(
     private empresaService: EmpresaService,
     private fb: FormBuilder,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private cdRef: ChangeDetectorRef,
+    private router: Router
   ) {
 this.empresaForm = this.fb.group({
   nombre: ['', Validators.required],
   direccion: ['', Validators.required],
   telefono: [null, Validators.required],
   email: ['', [Validators.required, Validators.email]],
-  propietario: ['',],
-  fechaCreacion: [null],
-  servicios: [''],
-  redesSociales: [''],
-  perteneceRedEmprendedores: [false],
-  redEmprendedoresConfirmada: [false],
-  aspectosMejorar: [''],
-  capacitadores: [''],
-  fechaLlamada: [null],
-  observaciones: [''],
-  disponibilidad: [''],
-  capacitacionRecibida: [false]
 });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.loadEmpresas();
+  }
 
   loadEmpresas(): void {
     this.empresaService.getAllEmpresas().subscribe({
       next: (empresas) => {
         this.empresas = empresas;
+        this.cdRef.detectChanges();
       },
       error: (error) => {
         this.messageService.add({
@@ -173,4 +167,8 @@ this.empresaForm = this.fb.group({
       },
     });
   }
+
+  verDetalleEmpresa(empresaId: string): void {
+  this.router.navigate(['/informacion-empresa', empresaId]);
+}
 }
