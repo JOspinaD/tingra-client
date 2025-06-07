@@ -6,6 +6,7 @@ import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 })
 export class TokenStorageService {
   private readonly TOKEN_KEY = 'auth_token';
+  private readonly USER_KEY = 'auth_user';
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
@@ -26,6 +27,7 @@ export class TokenStorageService {
   clear(): void {
     if (this.isBrowser()) {
       localStorage.removeItem(this.TOKEN_KEY);
+      localStorage.removeItem(this.USER_KEY)
     }
   }
 

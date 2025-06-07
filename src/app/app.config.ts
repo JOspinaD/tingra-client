@@ -8,6 +8,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeng/themes/aura';
 import { authInterceptor } from './core/interceptors/auth.interceptor';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -23,6 +24,8 @@ export const appConfig: ApplicationConfig = {
             theme: {
                 preset: Aura,
             }
-        })
+        }),
+        {provide: JWT_OPTIONS, useValue: JWT_OPTIONS},
+        JwtHelperService
   ]
 };

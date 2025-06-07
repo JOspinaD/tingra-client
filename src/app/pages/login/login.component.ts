@@ -7,6 +7,7 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { CardModule } from 'primeng/card';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 
 @Component({
   selector: 'app-login',
