@@ -25,15 +25,18 @@
               <p-button
                 icon="pi pi-pencil"
                 (click)="editarEmpresa(empresa)"
+                pTooltip="Editar Empresa"
               ></p-button>
               <p-button
                 icon="pi pi-trash"
                 (click)="eliminarEmpresa(empresa)"
+                pTooltip="Eliminar Empresa"
               ></p-button>
               <button
                 pButton
                 (click)="verDetalleEmpresa(empresa.id)"
-                label="Ver Detalle"
+                icon="pi pi-plus-circle"
+                pTooltip="Ver mas información de la Empresa"
               ></button>
             </td>
           </tr>

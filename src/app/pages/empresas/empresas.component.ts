@@ -17,6 +17,7 @@ import { FloatLabelModule } from 'primeng/floatlabel';
 import { InputTextModule } from 'primeng/inputtext';
 import { TableModule } from 'primeng/table';
 import { Toast } from 'primeng/toast';
+import { TooltipModule } from 'primeng/tooltip';
 
 @Component({
   selector: 'app-empresas',
@@ -30,6 +31,7 @@ import { Toast } from 'primeng/toast';
     CardModule,
     CommonModule,
     InputTextModule,
+    TooltipModule,
   ],
   templateUrl: './empresas.component.html',
   providers: [MessageService],
