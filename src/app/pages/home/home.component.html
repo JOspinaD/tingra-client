@@ -28,22 +28,21 @@
 <div class=" mt-8">
     <div class="flex justify-content-between  align-content-between">
       <div class="w-6 ml-5">
-        <p-galleria
+        <p-carousel
           [value]="images"
           [numVisible]="1"
-          [circular]="true"
+          [circular]="false"
           [responsiveOptions]="responsiveOptions"
-          [showItemNavigators]="true"
-          [showThumbnails]="false"
-          [showThumbnailNavigators]="false"
-          [autoPlay]="true"
+          [showIndicators]="false"
+          [showNavigators]="false"
+          [autoplayInterval]="4000"
         >
           <ng-template let-imageSrc pTemplate="item">
             <div class="flex align-items-center justify-content-center ">
               <img [src]="imageSrc" alt="Imagen" style="width: 100%; height: 500px; display: block; " />
             </div>
           </ng-template>
-        </p-galleria>
+        </p-carousel>
       </div>
       <div class=" w-5 flex align-items-center justify-content-center">
         <p class="font-bold w-full text-3xl mr-5">
