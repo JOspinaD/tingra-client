@@ -31,7 +31,7 @@
         <p-carousel
           [value]="images"
           [numVisible]="1"
-          [circular]="false"
+          [circular]="true"
           [responsiveOptions]="responsiveOptions"
           [showIndicators]="false"
           [showNavigators]="false"
@@ -39,7 +39,7 @@
         >
           <ng-template let-imageSrc pTemplate="item">
             <div class="flex align-items-center justify-content-center ">
-              <img [src]="imageSrc" alt="Imagen" style="width: 100%; height: 500px; display: block; " />
+              <img [src]="imageSrc" alt="Imagen" style="width: 90%; height: 600px; display: block; " />
             </div>
           </ng-template>
         </p-carousel>
